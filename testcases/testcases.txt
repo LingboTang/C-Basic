@@ -1,0 +1,40 @@
+cat text1.txt |./mention school > out1.txt
+<!-- basic functionality test 1, stdin and search term is provided in args -->
+
+./mention -f text1.txt school > out2.txt
+<!-- basic functionality test 2, text from file and search term in args -->
+
+./mention school -f text1.txt > out3.txt
+<!-- basic functionality test 3, same as 2 but with diff arg order -->
+
+cat text1.txt |./mention -l list1.txt > out4.txt
+<!-- basic functionality test 4, stdin and search term list -->
+
+./mention -f text1.txt -l list1.txt > out5.txt
+<!-- basic functionality test 5, text from file and search term list -->
+
+./mention -l list1.txt -f text1.txt > out6.txt
+<!-- basic functionality test 6, same as 2 but with diff arg order -->
+
+./mention t -f text1.txt > out7.txt
+<!-- basic functionality test 7, looking for very first and last character -->
+
+./mention hOPE -f text2.txt > out8.txt
+<!-- basic functionality test 8, testing file with multiple lines and case matching -->
+
+./mention -l list2.txt -f text3.txt > out9.txt
+<!-- basic functionality test 9, testing multiple matches in a term -->
+
+./mention -l list3.txt -f text4.txt > out10.txt
+<!-- basic functionality test 10, testing search terms as numbers -->
+
+./mention super-first-class -f text1.txt > out11.txt
+<!-- basic functionality test 11, testing term with non alphanumerics -->
+
+./mention -l list5.txt -f text5.txt > out13.txt
+<!-- basic functionality test 13, 3 terms that are 40 characters in length -->
+
+./mention -l list1.txt -f text6.txt > out14.txt
+<!-- basic functionality test 14, simple search terms, text is one really really long line -->
+
+
