@@ -1,0 +1,25 @@
+<!-- Lingbo,Lingbo Tang,Nov-4-2013,1 -->
+<!-- test format is as follows: -->
+<!-- input-file,search-term,search-list,bterm,tvalue,cvalue,output-file -->
+<!-- ------------- -->
+<!--1-->
+sars.txt,cough,,dry,,,sars-b-out.txt
+<!-- A small input file with a search term and a bterm -->
+<!--2-->
+mars-news.txt,,planets.txt,methane,,,mars-news-b-out.txt
+<!-- A small input file with a search list and a bterm -->
+<!--3-->
+mars-news.txt,,planets.txt,methane,3,,mars-news-bt-out.txt
+<!-- A small input file with a search list, a bterm and a term distance -->
+<!--4-->
+mars-wikipedia.txt,,planets.txt,water,,,mars-wikipedia-pb-out.txt
+<!-- A Wikipedia page (partly filtered) as input, a search list and bterm -->
+<!--5-->
+mars-wikipedia.txt,,planets.txt,water,,10,mars-wikipedia-pbc-out.txt
+<!-- A Wikipedia page (partly filtered), a search list, a bterm and a char distance -->
+<!--6-->
+mars-wikipedia.txt,,gasses.txt,mars,3,,mars-wikipedia-gbt-out.txt
+<!-- The same input as in test 5 with a different search list, a bterm and a term distance -->
+<!--7-->
+abandon.txt, frustrate.txt, mad, 3, abandon-out.txt
+<!-- Frustrate.txt as abandon.txt, frustrate.txt is checklist, mad is nearby-term, radius is 3 -->

@@ -1,0 +1,43 @@
+name:               Lingbo Tang
+ONE Card number:    1353070
+Unix id:            lingbo
+lecture section:    A1
+instructor's name:  Davood Rafiei
+lab section:        D02
+TA's name:          Candy Pang
+
+Does the following (see parse.c comment for more details)
+
+   submit.tar(concludes) 
+  ==============================              =========================
+mention.c
+function.c
+Makefile
+README
+testcases.txt
+mention.h
+
+Compile by typing make.
+
+Ensure an executable output in the current directory, and run by
+typing the command line as follows:
+
+
+    cat sars.txt | ./mention cough -b dry > sars-b-out.txt
+    ./mention -f mars-news.txt -l planets.txt -b methane > mars-news-b-out.txt
+    ./mention -f mars-news.txt -l planets.txt -b methane -t3 > mars-news-bt-out.txt
+    ./mention -f mars-wikipedia.txt -l planets.txt -b water > mars-wikipedia-pb-out.txt
+    ./mention -f mars-wikipedia.txt -l planets.txt -b water -c10 > mars-wikipedia-pbc-out.txt
+    ./mention -f mars-wikipedia.txt -l gasses.txt -t3 -b mars > mars-wikipedia-gbt-out.txt
+
+
+My program will take an additional command line argument for a nearby terms, given using the -b option. When a nearby term is provided, your program will report only mentions of a search term that are within a short distance of the givem nearby term. The default maximum nearby distance is set to 5 terms, meaning a mention is reported if the difference between the term offset of the mention and the term offset of the closest nearby term is less than or equal to 5.
+  
+My program will take two additional command line arguments to set the maximum nearby distance. The maximum nearby distance can be set in terms of either the number of terms using the t option or the number of characters using the c option. Again a mention is reported if the difference in offsets between the search term of the mention and the closest nearby term is less than or equal to the given distance.
+
+The maximum number of search terms (given in a file using the l option) is not known in advance, hence the search terms cannot be stored, for example, in a static array. But you can assume the list size is bounded and can fit in main memory using dynamic memory allocation. Your program must integrate memwatch to catch any memory leak.
+
+There may or may not be space between a command line option and its arguments. This means, for examples,. the options -c 15, -c15, and -c    15 are all valid and mean the same.
+
+
+

@@ -1,0 +1,31 @@
+name:               Lingbo Tang
+ONE Card number:    1353070
+Unix id:            lingbo
+lecture section:    A1
+instructor's name:  Davood Rafiei
+lab section:        D02
+TA's name:          Candy Pang
+
+Does the following (see parse.c comment for more details)
+
+   submit.tar(concludes) 
+  ==============================              =========================
+mention.c
+Makefile
+README
+testcases.txt
+
+Compile by typing make.
+
+Ensure an executable output in the current directory, and run by
+typing the command line as follows:
+
+  cat in1.txt | ./mention word > out1.txt
+  cat in1.txt | ./mention in2.txt > out1.txt
+  ./mention -f in1.txt word > out1.txt
+  ./mention -f in1.txt -l in2.txt > out1.txt
+  
+
+
+where in1.txt is a text file containg valid input for mention.c.
+

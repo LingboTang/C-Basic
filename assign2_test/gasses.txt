@@ -1,0 +1,17 @@
+nitrogen
+oxygen
+argon
+carbon dioxide
+neon
+helium
+methane
+krypton
+hydogen
+nitrous oxide
+xenon
+ozone
+nitrogen dioxide
+iodine
+ammonia
+water vapour
+
