@@ -1,0 +1,63 @@
+Q1.
+ a) 0xbfe1b84c , 0xbfe1b849 , 0x89abcdef , 56 , 34 , 12 , ef
+ b) a: stack, p: stack, q: data, "p:%p\n": data, p+1: no storage
+
+Q2.
+a)
+#ifndef __PHONEBOOK_H
+#define __PHONEBOOK_H
+/* lines in the header file */
+#endif
+b)
+John, 111-1111
+--------
+Mary, 222-2222
+Michael, 333-3333
+--------
+Cathy, 444-4444
+
+Q3. 
+ a) ls -lt
+ b) mkdir dirX
+    mv *.c dirX
+ c) mkdir dirY
+    cp * dirY
+ d) find . \( -name "*.c" -or -name "*.h" \) | grep -l Stallman
+ e) gcc -Wall -std=c99 prog.c -L. -ltexpro
+ f) export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
+
+Q4.
+ a) gcc -Wall -std=c99 -o calc calc.c
+ b) gcc -Wall -std=c99 -o spreadsheet spreadsheet.c calc.c
+    gcc -Wall -std=c99 -o editor editor.c
+ c) rm -f calc spreadsheet editor core
+ d) gcc -Wall -std=c99 -o calc calc.c
+    gcc -Wall -std=c99 -o spreadsheet spreadsheet.c calc.c
+    gcc -Wall -std=c99 -o editor editor.c
+
+Q5.
+  int bitsop(unsigned int *n) {
+    unsigned int m = *n;
+    int cnt=0;
+    while (m != 0) {
+      cnt += (m & 0x01) ? 1:0;
+      m = m >> 1;
+    }
+    *n = *n ^ 0xffffffff;
+    return cnt;
+  }
+
+Q6.
+  step 1: vector <cube> v(8);
+  step 2: v[0].setsides(3,4,5);
+          v[1].setsides(6,4,2);
+  step 3: cube *pcube = new cube(10,10,10);
+  step 4: v.push_back(*pcube);
+  step 5: for (int i=0; i<v.size(); i++)
+            cout << i << "-" << v[i].volume() << endl;
+  step 6: v.pop_back();
+  step 7: delete pcube;
+
+Q7) left as an exercise.
+Q8) left as an exercise.
+
