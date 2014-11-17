@@ -1,0 +1,27 @@
+in1.html,out1.txt
+<!-- drafiei,Davood Rafiei,Sept-01-2013,1 -->
+<!-- A short file with short lines, no redundant spaces and no html tags -->
+<!--   (except the comment lines) -->
+in2.html,out2.txt
+<!-- drafiei,Davood Rafiei,Sept-01-2013,2 -->
+<!-- A short file with some long lines, no reduandant spaces and no html tags-->
+<!--   (except the comment lines) -->
+in3.html,out3.txt
+<!-- drafiei,Davood Rafiei,Sept-01-2013,3 -->
+<!-- A short file with some short lines, some redundant spaces and html tags -->
+<!--   (except the comment lines) -->
+
+
+<WALFHIGBAOIba;gbjkabjavbgialba   
+ 
+ 
+ 
+
+ 
+ >askugvkasfba wasosao 	 	 	  oaehasoas 	 	
+ 
+
+
+d asffa  afa
+ ga   ,. sagsa 
+<  S>
