@@ -1,0 +1,251 @@
+#include <stdio.h>
+
+int main()
+{
+   FILE *fp;
+   char str[60];
+
+   /* opening file for reading */
+   fp = fopen("file.txt" , "r");
+   if(fp == NULL) {
+      perror("Error opening file");
+      return(-1);
+   }
+   if( fgets (str, 60, fp)!=NULL ) {
+      /* writing content to stdout */
+      puts(str);
+   }
+   fclose(fp);
+   
+   return(0);
+}
+
+--------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+
+int values[] = { 88, 56, 100, 2, 25 };
+
+int cmpfunc (const void * a, const void * b)
+{
+   return ( *(int*)a - *(int*)b );
+}
+
+int main()
+{
+   int n;
+
+   printf("Before sorting the list is: \n");
+   for( n = 0 ; n < 5; n++ ) {
+      printf("%d ", values[n]);
+   }
+
+   qsort(values, 5, sizeof(int), cmpfunc);
+
+   printf("\nAfter sorting the list is: \n");
+   for( n = 0 ; n < 5; n++ ) {
+      printf("%d ", values[n]);
+   }
+  
+  return(0);
+}
+-----------------------------------------
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+   char src[40];
+   char dest[100];
+  
+   memset(dest, '\0', sizeof(dest));
+   strcpy(src, "This is tutorialspoint.com");
+   strcpy(dest, src);
+
+   printf("Final copied string : %s\n", dest);
+   
+   return(0);
+}
+
+--------------------------------------------
+#include <stdio.h>
+
+int main() {
+  char string1[20];
+  char string2[20];
+
+  strcpy(string1, "Hello");
+  strcpy(string2, "Hellooo");
+  printf("Return Value is : %d\n", strncmp( string1, string2, 4));
+
+  strcpy(string1, "Helloooo");
+  strcpy(string2, "Hellooo");
+  printf("Return Value is : %d\n", strncmp( string1, string2, 10));
+
+  strcpy(string1, "Hellooo");
+  strcpy(string2, "Hellooo");
+  printf("Return Value is : %d\n", strncmp( string1, string2, 20));
+
+  return 0;
+}
+-----------------------------------------
+#include <stdio.h>
+#include <string.h>
+
+int main ()
+{
+   char src[50], dest[50];
+
+   strcpy(src,  "This is source");
+   strcpy(dest, "This is destination");
+
+   strcat(dest, src);
+
+   printf("Final destination string : |%s|", dest);
+   
+   return(0);
+}
+------------------------------------------
+#include <stdio.h>
+#include <string.h>
+
+int main ()
+{
+   char str[50];
+   int len;
+
+   strcpy(str, "This is tutorialspoint.com");
+
+   len = strlen(str);
+   printf("Length of |%s| is |%d|\n", str, len);
+   
+   return(0);
+-------------------------------------------------
+#include <ctype.h>
+
+void remove_punct_and_make_lower_case(char *p)
+{
+    char *src = p, *dst = p;
+
+    while (*src)
+    {
+       if (ispunct((unsigned char)*src))
+       {
+          /* Skip this character */
+          src++;
+       }
+       else if (isupper((unsigned char)*src))
+       {
+          /* Make it lowercase */
+          *dst++ = tolower((unsigned char)*src);
+          src++;
+       }
+       else if (src == dst)
+       {
+          /* Increment both pointers without copying */
+          src++;
+          dst++;
+       }
+       else
+       {
+          /* Copy character */
+          *dst++ = *src++;
+       }
+    }
+
+    *dst = 0;
+}
+--------------------------------------------
+isspace (man isspace), ispunct (man ispunct), islower (man islower), isalnum (man isalnum), isdigit (man isdigit) and the conversion functions such as tolower (man tolower) and toupper (man toupper).
+---------------------------------------------
+diff -b file1 file2 astep -c c201 -p labexam labexam.c
+__________________________________________
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   int day, year;
+   char weekday[20], month[20], dtm[100];
+
+   strcpy( dtm, "Saturday March 25 1989" );
+   sscanf( dtm, "%s %s %d  %d", weekday, month, &day, &year );
+
+   printf("%s %d, %d = %s\n", month, day, year, weekday );
+    
+   return(0);
+}
+______________________________________
+sscanf(string,"%[^,],%[^,],%[^,],%[^,],%[^,]", &val1, &val2, &val3, &val4);
+
+
+______________________________________
+itemPtr->priceis the same as(*itemPtr).price 
+
+_______________________________
+struct item {
+int itemNo;
+double price;
+double quantity;
+}; 
+
+typedef struct
+{
+int itemNo;
+double price;
+double quantity;
+} Item; 
+
+struct item ita;
+Item itb;
+
+latestPurchase.price; 
+
+•
+Item item2;
+•
+item2 = item1;
+•
+item2 is a copy of item1.
+
+
+
+
+struct Payroll {
+double salary;
+int numPayDays;
+};
+struct Employee {
+struct Payroll compensation;
+char firstName[10];
+char lastName[10];
+int age;
+}; 
+
+struct Employee record = {{34567, 200},"Bob","Smith",29}; 
+
+struct NoGood
+{struct NoGood member;
+}; 
+
+struct Link {
+struct Link* pre;
+struct Link*suc;
+}; 
+
+void displaySalary(struct Employee record) {
+printf(“%f\n”,record.compensation.salary);
+} 
+
+void payRaise(struct Employee *record, double rate) {
+record->compensation.salary*= (1+rate);
+} 
+
+struct Employee e1, *e2;
+*e2 = e1; // BAD
+e2 = malloc(sizeof(structEmployee));
+*e2 = e1; // OK
+payRaise
+(&e1, .25);
+payRaise
+(e2, .25); 
